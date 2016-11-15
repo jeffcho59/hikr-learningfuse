@@ -16,7 +16,7 @@ public partial class MainView: Fuse.App
         }
         public override object New()
         {
-            var self = new HomePage();
+            var self = new HomePage(__parent.router);
             self.Name = __selector0;
             return self;
         }
@@ -37,12 +37,13 @@ public partial class MainView: Fuse.App
         }
         public override object New()
         {
-            var self = new EditHikePage();
+            var self = new EditHikePage(__parent.router);
             self.Name = __selector0;
             return self;
         }
         static global::Uno.UX.Selector __selector0 = "editHike";
     }
+    internal Fuse.Navigation.Router router;
     static MainView()
     {
     }
@@ -66,13 +67,18 @@ public partial class MainView: Fuse.App
         var temp10 = new FuseJS.Bundle();
         var temp11 = new FuseJS.FileReaderImpl();
         var temp12 = new FuseJS.UserEvents();
+        router = new Fuse.Navigation.Router();
         var temp13 = new Fuse.Controls.ClientPanel();
         var temp14 = new Fuse.Controls.Navigator();
         var home = new Template(this, this);
         var editHike = new Template1(this, this);
+        router.Name = __selector0;
         temp13.Children.Add(temp14);
+        temp14.DefaultTemplate = "home";
         temp14.Templates.Add(home);
         temp14.Templates.Add(editHike);
+        this.Children.Add(router);
         this.Children.Add(temp13);
     }
+    static global::Uno.UX.Selector __selector0 = "router";
 }

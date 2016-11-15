@@ -1,4 +1,4 @@
-
+var Context = require("Modules/Context");
   var hike = this.Parameter;
   var name = hike.map(function(x) {return x.name; });
   var location = hike.map(function(x) {return x.location; });
@@ -6,7 +6,14 @@
   var rating = hike.map(function(x) {return x.rating; });
   var comments = hike.map(function(x) {return x.comments; });
 
-  function goBack(){
+  function save(){
+    Context.updateHike(hike.value.id, name.value, location.value, distance.value, rating.value, comments.value);
+    router.goBack();
+  }
+
+  function cancel(){
+    //Refresh hike value to reset dependent Observable' values
+    hike.value = hike.value;
     router.goBack();
   }
   module.exports = {
@@ -15,5 +22,6 @@
     distance: distance,
     rating: rating,
     comments: comments,
-    goBack: goBack
+    save: save,
+    cancel: cancel
   };

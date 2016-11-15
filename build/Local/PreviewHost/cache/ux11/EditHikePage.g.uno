@@ -1,21 +1,27 @@
 [Uno.Compiler.UxGenerated]
 public partial class EditHikePage: Fuse.Controls.Page
 {
+    readonly Fuse.Navigation.Router router;
     global::Uno.UX.Property<string> temp_Value_inst;
     global::Uno.UX.Property<string> temp1_Value_inst;
     global::Uno.UX.Property<string> temp2_Value_inst;
     global::Uno.UX.Property<string> temp3_Value_inst;
     global::Uno.UX.Property<string> temp4_Value_inst;
     global::Uno.UX.Property<string> temp5_Value_inst;
+    internal Fuse.Reactive.EventBinding temp_eb0;
+    internal Fuse.Reactive.EventBinding temp_eb1;
     global::Uno.UX.NameTable __g_nametable;
     static string[] __g_static_nametable = new string[] {
+        "router"
     };
     static EditHikePage()
     {
     }
     [global::Uno.UX.UXConstructor]
-    public EditHikePage()
+    public EditHikePage(
+		[global::Uno.UX.UXParameter("router")] Fuse.Navigation.Router router)
     {
+        this.router = router;
         InitializeUX();
     }
     void InitializeUX()
@@ -47,7 +53,11 @@ public partial class EditHikePage: Fuse.Controls.Page
         var temp17 = new Fuse.Reactive.DataBinding<string>(temp4_Value_inst, "rating");
         var temp18 = new Fuse.Controls.Text();
         var temp19 = new Fuse.Reactive.DataBinding<string>(temp5_Value_inst, "comments");
-        temp6.LineNumber = 2;
+        var temp20 = new Fuse.Controls.Button();
+        temp_eb0 = new Fuse.Reactive.EventBinding("save");
+        var temp21 = new Fuse.Controls.Button();
+        temp_eb1 = new Fuse.Reactive.EventBinding("cancel");
+        temp6.LineNumber = 3;
         temp6.FileName = "Pages/EditHikePage.ux";
         temp6.File = new global::Uno.UX.BundleFileSource(import global::Uno.IO.BundleFile("../../../../../Pages/EditHikePage.js"));
         temp7.Children.Add(temp8);
@@ -62,6 +72,8 @@ public partial class EditHikePage: Fuse.Controls.Page
         temp8.Children.Add(temp4);
         temp8.Children.Add(temp18);
         temp8.Children.Add(temp5);
+        temp8.Children.Add(temp20);
+        temp8.Children.Add(temp21);
         temp.Bindings.Add(temp9);
         temp10.Value = "Name:";
         temp1.Bindings.Add(temp11);
@@ -76,7 +88,14 @@ public partial class EditHikePage: Fuse.Controls.Page
         temp18.Value = "Comments:";
         temp5.TextWrapping = Fuse.Controls.TextWrapping.Wrap;
         temp5.Bindings.Add(temp19);
+        temp20.Text = "Save";
+        global::Fuse.Gestures.Clicked.AddHandler(temp20, temp_eb0.OnEvent);
+        temp20.Bindings.Add(temp_eb0);
+        temp21.Text = "Cancel";
+        global::Fuse.Gestures.Clicked.AddHandler(temp21, temp_eb1.OnEvent);
+        temp21.Bindings.Add(temp_eb1);
         __g_nametable.This = this;
+        __g_nametable.Objects.Add(router);
         this.Children.Add(temp6);
         this.Children.Add(temp7);
     }
