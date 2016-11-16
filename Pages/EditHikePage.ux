@@ -1,28 +1,40 @@
-<Page ux:Class="EditHikePage">
+<hikr.Page ux:Class="EditHikePage">
   <Router ux:Dependency="router" />
 <JavaScript File="EditHikePage.js" />
-<ScrollView>
-  <StackPanel>
 
+<DockPanel>
+  <Grid ColumnCount="2" Dock="Bottom">
+    <hikr.Button Text="Cancel" Clicked="{cancel}"/>
+    <hikr.Button Text="Save" Clicked="{save}" />
+  </Grid>
 
-    <Text Value = "{name}" />
-    <Text>Name:</Text>
-    <TextBox Value = "{name}" />
+  <ScrollView>
+  <StackPanel ItemSpacing="10" Padding="10">
 
-    <Text>Location:</Text>
-    <TextBox Value = "{location}" />
+    <hikr.Text ux:Class="TitleText" Opacity=".6" Margin="0, 0, 0, 5"/>
 
-    <Text>Distance (km):</Text>
-    <TextBox Value = "{distance}" InputHint="Decimal" />
+    <StackPanel>
+      <TitleText>Name:</TitleText>
+      <hikr.TextBox Value="{name}" />
+    </StackPanel>
 
-    <Text>Rating:</Text>
-    <TextBox Value = "{rating}" InputHint="Integer"/>
-
-    <Text>Comments:</Text>
-    <TextView Value = "{comments}" TextWrapping="Wrap"/>
-
-    <Button Text = "Save" Clicked = "{save}"/>
-    <Button Text = "Cancel" Clicked = "{cancel}"/>
+    <StackPanel>
+      <TitleText>Location:</TitleText>
+      <hikr.TextBox Value = "{location}" />
+    </StackPanel>
+    <StackPanel>
+      <TitleText>Distance (km):</TitleText>
+      <hikr.TextBox Value = "{distance}" InputHint="Decimal" />
+    </StackPanel>
+    <StackPanel>
+      <TitleText>Rating:</TitleText>
+      <hikr.TextBox Value = "{rating}" InputHint="Integer"/>
+    </StackPanel>
+    <StackPanel>
+      <TitleText>Comments:</TitleText>
+      <hikr.TextView Value="{comments}" TextWrapping="Wrap" />
+    </StackPanel>
   </StackPanel>
 </ScrollView>
-</Page>
+</DockPanel>
+</hikr.Page>

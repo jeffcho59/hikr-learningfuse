@@ -13,7 +13,7 @@ public partial class HomePage: Fuse.Controls.Page
             __parentInstance = parentInstance;
         }
         global::Uno.UX.Property<string> self_Text_inst;
-        internal Fuse.Reactive.EventBinding temp_eb1;
+        internal Fuse.Reactive.EventBinding temp_eb2;
         static Template()
         {
         }
@@ -22,10 +22,10 @@ public partial class HomePage: Fuse.Controls.Page
             var self = new Fuse.Controls.Button();
             self_Text_inst = new hikr_FuseControlsButton_Text_Property(self, __selector0);
             var temp = new Fuse.Reactive.DataBinding<string>(self_Text_inst, "name");
-            var temp_eb1 = new Fuse.Reactive.EventBinding("goToHike");
-            global::Fuse.Gestures.Clicked.AddHandler(self, temp_eb1.OnEvent);
+            var temp_eb2 = new Fuse.Reactive.EventBinding("goToHike");
+            global::Fuse.Gestures.Clicked.AddHandler(self, temp_eb2.OnEvent);
             self.Bindings.Add(temp);
-            self.Bindings.Add(temp_eb1);
+            self.Bindings.Add(temp_eb2);
             return self;
         }
         static global::Uno.UX.Selector __selector0 = "Text";

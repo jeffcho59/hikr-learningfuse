@@ -25,7 +25,7 @@ function updateHike(id, name, location, distance, rating, comments){
     }, 0);
   });
 }
-//var hikes is not being used
+//var hikes is being used in functions
 var hikes = [
   {
     id: 0,

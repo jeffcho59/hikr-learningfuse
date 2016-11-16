@@ -72,6 +72,7 @@ public partial class MainView: Fuse.App
         var temp14 = new Fuse.Controls.Navigator();
         var home = new Template(this, this);
         var editHike = new Template1(this, this);
+        this.Background = float4(0.007843138f, 0.1372549f, 0.1568628f, 1f);
         router.Name = __selector0;
         temp13.Children.Add(temp14);
         temp14.DefaultTemplate = "home";
