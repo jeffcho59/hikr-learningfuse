@@ -7,6 +7,15 @@ sealed class hikr_hikrText_Value_Property: Uno.UX.Property<string>
     public override void Set(string v, global::Uno.UX.IPropertyListener origin) { _obj.SetValue(v, origin); }
     public override bool SupportsOriginSetter { get { return true; } }
 }
+sealed class hikr_hikrText_FontSize_Property: Uno.UX.Property<float>
+{
+    [Uno.WeakReference] readonly hikr.Text _obj;
+    public hikr_hikrText_FontSize_Property(hikr.Text obj, global::Uno.UX.Selector name) : base(name) { _obj = obj; }
+    public override global::Uno.UX.PropertyObject Object { get { return _obj; } }
+    public override float Get() { return _obj.FontSize; }
+    public override void Set(float v, global::Uno.UX.IPropertyListener origin) { _obj.FontSize = v; }
+    public override bool SupportsOriginSetter { get { return false; } }
+}
 sealed class hikr_hikrTextBox_Value_Property: Uno.UX.Property<string>
 {
     [Uno.WeakReference] readonly hikr.TextBox _obj;
@@ -41,5 +50,14 @@ sealed class hikr_hikrButton_Text_Property: Uno.UX.Property<string>
     public override global::Uno.UX.PropertyObject Object { get { return _obj; } }
     public override string Get() { return _obj.Text; }
     public override void Set(string v, global::Uno.UX.IPropertyListener origin) { _obj.SetText(v, origin); }
+    public override bool SupportsOriginSetter { get { return true; } }
+}
+sealed class hikr_hikrButton_FontSize_Property: Uno.UX.Property<float>
+{
+    [Uno.WeakReference] readonly hikr.Button _obj;
+    public hikr_hikrButton_FontSize_Property(hikr.Button obj, global::Uno.UX.Selector name) : base(name) { _obj = obj; }
+    public override global::Uno.UX.PropertyObject Object { get { return _obj; } }
+    public override float Get() { return _obj.FontSize; }
+    public override void Set(float v, global::Uno.UX.IPropertyListener origin) { _obj.SetFontSize(v, origin); }
     public override bool SupportsOriginSetter { get { return true; } }
 }

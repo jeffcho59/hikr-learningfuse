@@ -18,8 +18,25 @@ namespace hikr
                 OnPropertyChanged("Text", origin);
             }
         }
+        float _field_FontSize;
+        [global::Uno.UX.UXOriginSetter("SetFontSize")]
+        public float FontSize
+        {
+            get { return _field_FontSize; }
+            set { SetFontSize(value, null); }
+        }
+        public void SetFontSize(float value, global::Uno.UX.IPropertyListener origin)
+        {
+            if (value != _field_FontSize)
+            {
+                _field_FontSize = value;
+                OnPropertyChanged("FontSize", origin);
+            }
+        }
         global::Uno.UX.Property<string> temp_Value_inst;
         global::Uno.UX.Property<string> this_Text_inst;
+        global::Uno.UX.Property<float> temp_FontSize_inst;
+        global::Uno.UX.Property<float> this_FontSize_inst;
         static Button()
         {
         }
@@ -33,13 +50,17 @@ namespace hikr
             var temp = new hikr.Text();
             temp_Value_inst = new hikr_hikrText_Value_Property(temp, __selector0);
             this_Text_inst = new hikr_hikrButton_Text_Property(this, __selector1);
+            temp_FontSize_inst = new hikr_hikrText_FontSize_Property(temp, __selector2);
+            this_FontSize_inst = new hikr_hikrButton_FontSize_Property(this, __selector2);
             var temp1 = new Fuse.Controls.Rectangle();
             var temp2 = new Fuse.Effects.DropShadow();
             var temp3 = new Fuse.Controls.PropertyBinding<string>(temp_Value_inst, this_Text_inst);
-            var temp4 = new Fuse.Gestures.WhilePressed();
-            var temp5 = new Fuse.Animations.Scale();
+            var temp4 = new Fuse.Controls.PropertyBinding<float>(temp_FontSize_inst, this_FontSize_inst);
+            var temp5 = new Fuse.Gestures.WhilePressed();
+            var temp6 = new Fuse.Animations.Scale();
             this.Margin = float4(10f, 10f, 10f, 10f);
             this.Padding = float4(10f, 10f, 10f, 10f);
+            this.FontSize = 16f;
             temp1.CornerRadius = float4(4f, 4f, 4f, 4f);
             temp1.Color = float4(0.07058824f, 0.372549f, 0.3882353f, 1f);
             temp1.Layer = Fuse.Layer.Background;
@@ -49,18 +70,19 @@ namespace hikr
             temp2.Distance = 1f;
             temp2.Spread = 0.2f;
             temp2.Color = float4(0f, 0f, 0f, 0.3764706f);
-            temp.FontSize = 16f;
             temp.TextAlignment = Fuse.Controls.TextAlignment.Center;
             temp.Bindings.Add(temp3);
-            temp4.Animators.Add(temp5);
-            temp5.Factor = 0.95f;
-            temp5.Easing = Fuse.Animations.Easing.QuadraticOut;
-            temp5.Duration = 0.08;
+            temp.Bindings.Add(temp4);
+            temp5.Animators.Add(temp6);
+            temp6.Factor = 0.95f;
+            temp6.Easing = Fuse.Animations.Easing.QuadraticOut;
+            temp6.Duration = 0.08;
             this.Children.Add(temp1);
             this.Children.Add(temp);
-            this.Children.Add(temp4);
+            this.Children.Add(temp5);
         }
         static global::Uno.UX.Selector __selector0 = "Value";
         static global::Uno.UX.Selector __selector1 = "Text";
+        static global::Uno.UX.Selector __selector2 = "FontSize";
     }
 }

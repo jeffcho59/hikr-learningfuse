@@ -1,5 +1,5 @@
 [Uno.Compiler.UxGenerated]
-public partial class EditHikePage: Fuse.Controls.Page
+public partial class EditHikePage: hikr.Page
 {
     readonly Fuse.Navigation.Router router;
     global::Uno.UX.Property<string> temp_Value_inst;

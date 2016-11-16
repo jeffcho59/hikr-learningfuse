@@ -1,5 +1,5 @@
 [Uno.Compiler.UxGenerated]
-public partial class HomePage: Fuse.Controls.Page
+public partial class HomePage: hikr.Page
 {
     readonly Fuse.Navigation.Router router;
     [Uno.Compiler.UxGenerated]
@@ -81,39 +81,35 @@ public partial class HomePage: Fuse.Controls.Page
         __g_nametable = new global::Uno.UX.NameTable(null, __g_static_nametable);
         var temp = new Fuse.Reactive.Each();
         temp_Items_inst = new hikr_FuseReactiveEach_Items_Property(temp, __selector0);
-        var temp1 = new Fuse.Controls.Image();
-        var temp2 = new Fuse.Reactive.JavaScript(__g_nametable);
-        var temp3 = new Fuse.Controls.DockPanel();
-        var temp4 = new hikr.Text();
-        var temp5 = new Fuse.Controls.ScrollView();
-        var temp6 = new Fuse.Controls.StackPanel();
-        var temp7 = new Template(this, this);
-        var temp8 = new Template1(this, this);
-        var temp9 = new Fuse.Reactive.DataBinding<object>(temp_Items_inst, "hikes");
-        var temp10 = new Separator();
-        temp1.Layer = Fuse.Layer.Background;
-        temp1.File = new global::Uno.UX.BundleFileSource(import global::Uno.IO.BundleFile("../../../../../Assets/background.jpg"));
-        temp2.LineNumber = 4;
-        temp2.FileName = "Pages/HomePage.ux";
-        temp2.File = new global::Uno.UX.BundleFileSource(import global::Uno.IO.BundleFile("../../../../../Pages/HomePage.js"));
-        temp3.Children.Add(temp4);
-        temp3.Children.Add(temp5);
-        temp4.Value = "Recent Hikes";
-        temp4.FontSize = 30f;
-        temp4.TextAlignment = Fuse.Controls.TextAlignment.Center;
-        temp4.Margin = float4(0f, 50f, 0f, 50f);
-        global::Fuse.Controls.DockPanel.SetDock(temp4, Fuse.Layouts.Dock.Top);
-        temp5.Children.Add(temp6);
-        temp6.Children.Add(temp);
-        temp6.Children.Add(temp10);
+        var temp1 = new Fuse.Reactive.JavaScript(__g_nametable);
+        var temp2 = new Fuse.Controls.DockPanel();
+        var temp3 = new hikr.Text();
+        var temp4 = new Fuse.Controls.ScrollView();
+        var temp5 = new Fuse.Controls.StackPanel();
+        var temp6 = new Template(this, this);
+        var temp7 = new Template1(this, this);
+        var temp8 = new Fuse.Reactive.DataBinding<object>(temp_Items_inst, "hikes");
+        var temp9 = new Separator();
+        temp1.LineNumber = 4;
+        temp1.FileName = "Pages/HomePage.ux";
+        temp1.File = new global::Uno.UX.BundleFileSource(import global::Uno.IO.BundleFile("../../../../../Pages/HomePage.js"));
+        temp2.Children.Add(temp3);
+        temp2.Children.Add(temp4);
+        temp3.Value = "Recent Hikes";
+        temp3.FontSize = 30f;
+        temp3.TextAlignment = Fuse.Controls.TextAlignment.Center;
+        temp3.Margin = float4(0f, 50f, 0f, 50f);
+        global::Fuse.Controls.DockPanel.SetDock(temp3, Fuse.Layouts.Dock.Top);
+        temp4.Children.Add(temp5);
+        temp5.Children.Add(temp);
+        temp5.Children.Add(temp9);
+        temp.Templates.Add(temp6);
         temp.Templates.Add(temp7);
-        temp.Templates.Add(temp8);
-        temp.Bindings.Add(temp9);
+        temp.Bindings.Add(temp8);
         __g_nametable.This = this;
         __g_nametable.Objects.Add(router);
         this.Children.Add(temp1);
         this.Children.Add(temp2);
-        this.Children.Add(temp3);
     }
     static global::Uno.UX.Selector __selector0 = "Items";
 }
